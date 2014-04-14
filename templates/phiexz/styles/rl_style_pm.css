@@ -278,17 +278,6 @@ header,.g,.y,.r,.n{
 	text-align:center;
 	color:#e49
 }
-.ss-cpu-table{
-	border-collapse:separate;
-	border-spacing:0
-}
-.ss-td-style,.cpu-td,.cell-plugin a{
-	color:#666;
-	text-align:center
-}
-.cpu-td{
-	width:200px
-}
 .container{
 	border:1px solid #666;
 	width:90%;
@@ -299,3 +288,32 @@ header,.g,.y,.r,.n{
 	height:400px;
 	border:1px solid #505050
 }
+fieldset.ServerStats {
+	border:2px dashed gray;
+	margin: 3px;
+	padding: 5px;
+}
+legend.ServerStats {
+    width:inherit; /* Or auto */
+    padding:0 5px; /* To give a bit of padding on the left and right */
+    border-bottom:none;
+}
+span.ServerStats {
+  background-color: #333fff;
+  color: #fff;
+  padding: 3px 10px;
+  margin: 0px 3px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-color: #fff;
+  -webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow:    1px 0px 10px 0px rgba(0,0,0,0.75);
+  box-shadow:         1px 0px 10px 0px rgba(0,0,0,0.75);
+}
+span.ServerStats:hover {
+  background-color: #333aaa;
+}
+.progress { position: relative; height: 25px; } 
+.progress > .progress-type { position: absolute; left: 0px; font-weight: 800; padding: 3px 5px 2px 5px; color: rgb(255, 255, 255); background-color: rgba(25, 25, 25, 0.2); } 
+.progress > .progress-completed { position: absolute; right: 0px; font-weight: 800; padding: 3px 10px 2px; }

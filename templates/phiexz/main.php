@@ -462,7 +462,40 @@ print '<span class="autodel">'.lang(282).': <b>'.$ddelay.'</b>&nbsp;'.lang(284).
 <?php if($options['server_info']) {
 ob_start();
 ?>
-<div id="server_stats"><?php require_once(CLASS_DIR."sinfo.php"); ?></div>
+<!--<div id="server_stats"><?php require_once(CLASS_DIR."sinfo.php"); ?></div>-->
+<div id="server_stats">
+<fieldset class="ServerStats">
+  <legend class="ServerStats"><a id="bServerStats" class="btn btn-xs btn-ServerStats"><span class="glyphicon glyphicon-stats"></span> | Server Status</a></legend>
+  <div id="ServerStats" style="text-align:left; color:#000; padding:10px;">
+      <p>Server: <a id="ServerStatsOs_Link" class="ServerStats" href="#"><span id="ServerStatsOs" class="ServerStats"></span></a> on <a class="ServerStats" href="http://www.kernel.org"><span id="ServerStatsKernel" class="ServerStats"></span></a></p>
+      <p>Processor: <span id="ServerStatsProc" class="ServerStats"></span> With <span id="ServerStatsCore" class="ServerStats"></span> Cores Active</p>
+      <p>Bandwith Used: <span id="ServerStatsDl" class="ServerStats glyphicon glyphicon-arrow-down"></span><span id="ServerStatsUl" class="ServerStats glyphicon glyphicon-arrow-up"></span></p>
+      <p>Uptime: <span id="ServerStatsUp_D" class="ServerStats"> Days</span> , <span id="ServerStatsUp_H" class="ServerStats"> Hours</span> and <span id="ServerStatsUp_M" class="ServerStats"> Minutes</span></p>
+      <div class="progress">
+        <div id="ServerStatsRamUsedP" class="progress-bar progress-bar-success" role="progressbar" style="width: 40%">
+          <span id="ServerStatsRam_U">40% Used</span> 
+        </div>
+        <div id="ServerStatsRamCacheP" class="progress-bar progress-bar-info" role="progressbar" style="width: 10%">
+          <span id="ServerStatsRam_C">10% Cached</span> 
+        </div>
+        <span class="progress-type">RAM</span>
+        <span id="ServerStatsRam_F" class="progress-completed">50% Free</span>
+      </div>
+      <div class="progress">
+        <div id="ServerStatsDiskP" class="progress-bar progress-bar-danger" role="progressbar" style="width: 0%">
+          <span id="ServerStatsDiskU"></span> 
+        </div>
+        <span class="progress-type">DISK</span>
+        <span id="ServerStatsDiskF" class="progress-completed"></span>
+      </div>
+    </div>
+  </fieldset>
+<script type="text/javascript">
+$("#bServerStats").click(function () {
+$("#ServerStats").toggle('slow');
+});
+</script>
+</div>
 <?php if ($options['ajax_refresh']) { ?>
 <script type="text/javascript">var stats_timer = setTimeout("refreshStats()",10 * 1000);</script>
 <?php
