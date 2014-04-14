@@ -464,7 +464,7 @@ print '<span class="autodel">'.lang(282).': <b>'.$ddelay.'</b>&nbsp;'.lang(284).
 <div id="server_stats">
 <fieldset class="ServerStats">
   <legend class="ServerStats"><a id="bServerStats" class="btn btn-xs btn-ServerStats"><span class="glyphicon glyphicon-stats"></span> | Server Status</a></legend>
-  <div id="ServerStats" style="text-align:left; color:#000; padding:10px;">
+  <div id="ServerStats" style="display:none; text-align:left; color:#000; padding:10px;">
       <p>Server: <a id="ServerStatsOs_Link" class="ServerStats" href="#"><span id="ServerStatsOs" class="ServerStats"></span></a> on <a class="ServerStats" href="http://www.kernel.org"><span id="ServerStatsKernel" class="ServerStats"></span></a></p>
       <p>Processor: <span id="ServerStatsProc" class="ServerStats"></span> With <span id="ServerStatsCore" class="ServerStats"></span> Cores Active</p>
       <p>Bandwith Used: <span id="ServerStatsDl" class="ServerStats glyphicon glyphicon-arrow-down"></span><span id="ServerStatsUl" class="ServerStats glyphicon glyphicon-arrow-up"></span></p>
