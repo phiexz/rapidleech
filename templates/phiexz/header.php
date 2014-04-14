@@ -25,6 +25,7 @@ pic1.src="templates/phiexz/images/ajax-loading.gif";
 /* ]]> */
 </script>
 <script src="classes/js.js"></script>
+<script src="templates/phiexz/js/serverstats.js"></script>
 <?php
 if ($options['ajax_refresh']) { echo '<script src="classes/ajax_refresh.js"></script>'.$nn; }
 if ($options['flist_sort']) { echo '<script src="classes/sorttable.js"></script>'.$nn; }
