@@ -156,6 +156,9 @@ header,.g,.y,.r,.n{
 	color:#F04040;
 	font-weight:bold
 }
+.autodel-hidden {
+    color:#ccc;
+}
 .cell-plugin,.button-auto{
 	height:26px;
 	width:120px;

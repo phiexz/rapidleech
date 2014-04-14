@@ -454,6 +454,9 @@ print '<span class="autodel">'.lang(282).': <b>'.$ddelay.'</b>&nbsp;'.lang(284).
 }
 }
 ?>
+<script type="text/javascript">
+	setInterval(function () { $(".autodel").toggleClass("autodel-hidden"); }, 1000);
+</script>
 </div>
 <div id="sinfo">
 <?php if($options['server_info']) {
