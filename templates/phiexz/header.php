@@ -7,6 +7,7 @@
 <meta name="description" content="PX Rapidleech">
 <meta name="keywords" content="PX phiexz rapidleech">
 <link rel="stylesheet" href="templates/phiexz/styles/rl_style_pm.css">
+<link rel="stylesheet" href="templates/phiexz/styles/bootstrap_custom.css">
 <title><?php
 if (!isset($nn)) $nn = "\r\n";
 if (!isset($page_title)) {
