@@ -460,9 +460,7 @@ print '<span class="autodel">'.lang(282).': <b>'.$ddelay.'</b>&nbsp;'.lang(284).
 </div>
 <div id="sinfo">
 <?php if($options['server_info']) {
-ob_start();
 ?>
-<!--<div id="server_stats"><?php require_once(CLASS_DIR."sinfo.php"); ?></div>-->
 <div id="server_stats">
 <fieldset class="ServerStats">
   <legend class="ServerStats"><a id="bServerStats" class="btn btn-xs btn-ServerStats"><span class="glyphicon glyphicon-stats"></span> | Server Status</a></legend>
@@ -500,7 +498,6 @@ $("#ServerStats").toggle('slow');
 <script type="text/javascript">var stats_timer = setTimeout("refreshStats()",10 * 1000);</script>
 <?php
 }
-ob_end_flush();
 }
 ?>
 <hr />
