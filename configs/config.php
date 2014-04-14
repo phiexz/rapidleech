@@ -24,7 +24,7 @@ $options = array (
   array (
     'test' => 'test',
   ),
-  'template_used' => 'neatblue',
+  'template_used' => 'phiexz',
   'default_language' => 'en',
   'show_all' => true,
   'server_info' => true,
