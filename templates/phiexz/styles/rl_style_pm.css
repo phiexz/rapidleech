@@ -47,7 +47,7 @@ body{
 }
 tr{
 	font:12px verdana,arial,helvetica,sans-serif;
-	color:#555
+	color:#ccc
 }
 input,select,textarea,
 .caption,.transloadui,.uploadui{
