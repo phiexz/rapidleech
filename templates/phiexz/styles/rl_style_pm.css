@@ -37,6 +37,7 @@ hr{
 }
 img,table{
 	border:0
+	
 }
 body{
 	font:14px "segoe ui",tahoma,sans-serif;
@@ -237,6 +238,9 @@ header,.g,.y,.r,.n{
 }
 .md5table td{
 	background:#454545
+}
+.md5table tr{
+	color:#ccc
 }
 .rar-main-td,.unrar-main-td,.unrar-options{
 	border:1px solid #666;
