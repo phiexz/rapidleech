@@ -27,7 +27,12 @@ pic1.src="templates/phiexz/images/ajax-loading.gif";
 <script src="classes/js.js"></script>
 <script src="templates/phiexz/js/serverstats.js"></script>
 <?php
-if ($options['ajax_refresh']) { echo '<script src="classes/ajax_refresh.js"></script>'.$nn; }
+if ($options['ajax_refresh']) { echo '
+<script type="text/javascript">
+  $(document).ready(function(){
+    setInterval(ServerStatus, 300 * 1e3);
+  });
+</script>'.$nn; }
 if ($options['flist_sort']) { echo '<script src="classes/sorttable.js"></script>'.$nn; }
 ?>
 <script type="text/javascript">function toggle(b){var a=document.getElementById(b);if(a.style.display=="none"){a.style.display="block"}else{a.style.display="none"}};</script>
