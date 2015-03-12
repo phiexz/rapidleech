@@ -11,9 +11,9 @@
 <title><?php
 if (!isset($nn)) $nn = "\r\n";
 if (!isset($page_title)) {
-	echo 'Rapidleech v2 rev. '.$rev_num;
+  echo 'Rapidleech v2 rev. '.$rev_num;
 } else {
-	echo htmlspecialchars($page_title);
+  echo htmlspecialchars($page_title);
 }
 ?></title>
 <script type="text/javascript">
@@ -38,4 +38,4 @@ if ($options['flist_sort']) { echo '<script src="classes/sorttable.js"></script>
 <script type="text/javascript">function toggle(b){var a=document.getElementById(b);if(a.style.display=="none"){a.style.display="block"}else{a.style.display="none"}};</script>
 </head>
 <body>
-<header><div id="header"><a class="header" href="<?php echo $_SERVER['SERVER_NAME']; ?>">PX Rapidleech</a></div></header><br />
+  <header><div id="header"><a class="header" href="/">PX Rapidleech</a></div></header><br />
