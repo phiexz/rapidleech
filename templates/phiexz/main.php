@@ -1,7 +1,7 @@
 <?php
 if (!defined('RAPIDLEECH')) {
-	require_once("index.html");
-	exit;
+  require_once("index.html");
+  exit;
 }
 ?>
 <table align="center">
@@ -20,9 +20,9 @@ if (!defined('RAPIDLEECH')) {
 <?php
 ksort($host);
 foreach ($host as $site => $file)
-	{
-	echo '<span class="plugincollst">'.$site.'</span><br />';
-	}
+  {
+  echo '<span class="plugincollst">'.$site.'</span><br />';
+  }
 ?>
 </div>
 <br />
@@ -37,12 +37,12 @@ if ( !empty ( $premium_acc ) )
 <td height="100%" style="padding:3px;">
 <div dir="rtl" align="left" style="padding-left:5px;">
 <?php if ( !empty ( $premium_acc ) )
-			{
-				foreach ( $premium_acc as $serverName => $value )
-				{
-					echo '<span class="plugincollst">'. str_replace( '_', '.', $serverName ) .'</span><br />';
-				}
-			}
+      {
+        foreach ( $premium_acc as $serverName => $value )
+        {
+          echo '<span class="plugincollst">'. str_replace( '_', '.', $serverName ) .'</span><br />';
+        }
+      }
 ?>
 </div>
 </td>
@@ -86,6 +86,18 @@ if (!$options['notes_disable']) {
 <td id="navcell2" class="cell-nav" onclick="javascript:switchCell(2);"><?php echo lang(330); ?></td>
 <td id="navcell3" class="cell-nav" onclick="javascript:switchCell(3);"><?php echo lang(331); ?></td>
 <td id="navcell4" class="cell-nav" onclick="javascript:switchCell(4);"><?php echo lang(332); ?></td>
+<td id="navcell5" class="cell-nav" onclick="javascript:switchCell(5);">Movie Thumbler</td>
+<script type="text/javascript">
+  function switchCell(m) {
+  $('#tb1, #tb2, #tb3, #tb4, #tb5').hide();
+  $('#navcell1, #navcell2, #navcell3, #navcell4, #navcell5').removeClass('selected');
+  $('#navcell' + m).addClass('selected');
+  $('#tb' + m).fadeIn('slow');
+  if (m == 3 && $('#table_filelist_h').length != 0) {
+    table_filelist_refresh_headers();
+  }
+}
+</script>
 </tr>
 </tbody>
 </table>
@@ -400,19 +412,32 @@ Rapidshare.com Folders | Usercash.com</div><br />
 </tbody>
 </table>
 <!--End lix checker-->
+<!--Start Movie Thumbler MTN-->
+<table class="hide-table" id="tb5" cellspacing="5" width="100%">
+<tbody>
+<tr>
+<td align="center" width="100%">
+<div align="center" style="">
+<?php require_once("templates/phiexz/mtn/mtn.php"); ?>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<!--End Movie Thumbler MTN-->
 <?php
-	if(isset($_GET["act"]))
-	  {
-		echo '<script type="text/javascript">switchCell(3);</script>';
-	  }
-	elseif(isset($_GET["debug"]) || isset($_POST["links"]))
-	  {
-		echo '<script type="text/javascript">switchCell(4);</script>';
-	  }
-	else
-	  {
-		echo '<script type="text/javascript">'."$('#navcell1').addClass('selected');</script>";
-	  }
+  if(isset($_GET["act"]))
+    {
+    echo '<script type="text/javascript">switchCell(3);</script>';
+    }
+  elseif(isset($_GET["debug"]) || isset($_POST["links"]))
+    {
+    echo '<script type="text/javascript">switchCell(4);</script>';
+    }
+  else
+    {
+    echo '<script type="text/javascript">'."$('#navcell1').addClass('selected');</script>";
+    }
 ?>
 </td>
 <td valign="top">&nbsp;</td>
@@ -441,7 +466,7 @@ var show2 = 0;
 if ($options['file_size_limit'] > 0) {
 echo '<span style="color:#DCDCDC">'.lang(337).' <b>' . bytesToKbOrMbOrGb ( $options['file_size_limit']*1024*1024 ) . '</b><br /></span>';
 }
-?>	
+?>  
 <?php
 $delete_delay = $options['delete_delay'];
 if (is_numeric($delete_delay) && $delete_delay > 0){
@@ -455,7 +480,7 @@ print '<span class="autodel">'.lang(282).': <b>'.$ddelay.'</b>&nbsp;'.lang(284).
 }
 ?>
 <script type="text/javascript">
-	setInterval(function () { $(".autodel").toggleClass("autodel-hidden"); }, 1000);
+  setInterval(function () { $(".autodel").toggleClass("autodel-hidden"); }, 1000);
 </script>
 </div>
 <div id="sinfo">
