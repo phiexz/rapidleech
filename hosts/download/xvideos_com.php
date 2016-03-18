@@ -22,7 +22,7 @@ $vid)) html_error('Invalid Link.');
         if (!preg_match('@(?<=flv_url=)https?[^\"\'&]+@', $page, $DL)) html_error('Error: Download link not found.');
         $DL = urldecode($DL[0]);
         if (!preg_match('@\.(?:mp4|flv|webm|avi)$@i', basename($DL), $ext)) $ext = array('.flv');
-        $filename = preg_replace('@\.(mp4|flv|mkv|webm|wmv|(m2)?ts|rm(vb)?|mpe?g?|vob|avi|[23]gp)$@i', '', preg_replace('@[^ 
+        $filename = preg_replace('@(?:\.(?:mp4|flv|mkv|webm|wmv|(m2)?ts|rm(vb)?|mpe?g?|vob|avi|[23]gp))+$@i', '', preg_replace('@[^ 
 A-Za-z_\-\d\.,\(\)\[\]\{\}&\!\'\@\%\#]@u', '_', html_entity_decode(trim($title[1]), ENT_QUOTES, 'UTF-8')));
         $filename .= sprintf(' [xvideos][%d]%s', $vid[2], $ext[0]);
         $this->RedirectDownload($DL, $filename, 0, 0, 0, $filename);
