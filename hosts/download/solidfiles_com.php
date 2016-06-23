@@ -1,19 +1,29 @@
 <?php
+
 if (!defined('RAPIDLEECH')) {
-    require_once ("index.html");
-    exit ();
+	require_once('index.html');
+	exit();
 }
- 
-class xvideos_com extends DownloadClass {
- 
-    public function Download($link) {        
-        $page = $this->GetPage($link); 
-        if (preg_match('#<title>(.*) - Solidfiles</title>#', $page, $FileName))
-          html_error($FileName)
-          //if (preg_match("#flv_url=(http(.*))\&amp#", $page, $dl))        
-          //$this->RedirectDownload(urldecode($dl[1]), $FileName[1], $link);
-        exit();
-    }
+
+if (!file_exists(HOST_DIR . 'download/GenericXFS_DL.php')) html_error('Cannot load "'.htmlentities(HOST_DIR).'download/GenericXFS_DL.php" (File doesn\'t exists)');
+require_once(HOST_DIR . 'download/GenericXFS_DL.php');
+
+class solidfiles_com extends GenericXFS_DL
+{
+	public function Download($link)
+	{
+		$page = $this->GetPage($link);
+
+		if (!preg_match("@https?:\\/\\/s(\\d+\\.)?solidfilesusercontent\\.com\\/[^\"\\'><\\r\\n\\t]+@i", urldecode($page), $downl)) html_error('Error: Download link not found.');
+
+		$filename=substr(basename($downl[0]),0,strpos(basename($downl[0]),"&"));
+
+		$this->RedirectDownload(substr($downl[0],0,strpos($downl[0],"&")), $filename, 0, 0, $filename);
+
+	}
+
 }
-// Create by phiexz 20-01-2014
+
+// Written by MosTec1991.
+
 ?>
